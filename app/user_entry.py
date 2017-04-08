@@ -14,6 +14,7 @@ def run():
 
 
 def main():
+    store.load()
     while True:
         # Run the program in the loop.
         run()
@@ -28,6 +29,5 @@ def main():
 
     # This will save the user data to a file.
     store.save()
-    print(store.get_list())
 
 main()
