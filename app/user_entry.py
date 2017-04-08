@@ -1,4 +1,5 @@
-user_list = []
+# user_list = []
+import store
 
 
 def run():
@@ -9,7 +10,7 @@ def run():
     user['email'] = input('Email: ')
     user['address'] = input('Address: ')
 
-    user_list.append(user)
+    store.add(user)
 
 
 def main():
@@ -17,7 +18,7 @@ def main():
         # Run the program in the loop.
         run()
         print()
-        
+
         # Ask the user if he wants more entries.
         should_continue = input('More Entries (Y/N)? ')
 
@@ -25,6 +26,8 @@ def main():
         if should_continue.upper() != 'Y':
             break
 
-    print(user_list)
+    # This will save the user data to a file.
+    store.save()
+    print(store.get_list())
 
 main()
